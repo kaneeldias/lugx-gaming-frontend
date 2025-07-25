@@ -30,6 +30,27 @@ https://templatemo.com/tm-589-lugx-gaming
 
 <body>
 
+<script>
+    async function getGames() {
+        fetch(`http://localhost:3000/orders`)
+            .then(response => response.json())
+            .then(data => {
+                const orderContainer = document.querySelector('#orders');
+                data.forEach(order => {
+                    const orderRow = document.createElement('tr');
+                    orderRow.innerHTML = `<td>${order.order_id}</td><td>${order.username}</td><td>${getOrderDetails(order.items)}</td><td>$${order.total_price.toFixed(2)}</td>`;
+                    orderContainer.appendChild(orderRow);
+                });
+            })
+    }
+
+    function getOrderDetails(items) {
+        return items.map(item => `${item.game_name} (x${item.quantity})`).join('</br>');
+    }
+
+    getGames()
+</script>
+
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -82,6 +103,17 @@ https://templatemo.com/tm-589-lugx-gaming
         </div>
       </div>
     </div>
+  </div>
+
+  <div style="margin-bottom:100px; background-color:#0170f8; z-index: 100; padding:10px; color:white; border-width: 3px; border-style: solid; border-color: white">
+    <table id="orders" cellpadding="10" cellspacing="2" style="width:100%; color:white; font-size:16px;">
+      <tr style="font-size:16px; font-weight:bold;">
+        <td>Order ID</td>
+        <td>Username</td>
+        <td>Order Items</td>
+        <td>Total Price</td>
+      </tr>
+    </table>
   </div>
 
   <div class="section trending">
