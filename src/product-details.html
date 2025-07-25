@@ -29,6 +29,23 @@ https://templatemo.com/tm-589-lugx-gaming
 
 <body>
 
+  <script>
+    async function getGames() {
+        fetch(`http://localhost:30081/games`)
+        .then(response => response.json())
+        .then(data => {
+            const gamesContainer = document.querySelector('#games_list');
+            data.forEach(game => {
+                const gameItem = document.createElement('tr');
+                gameItem.innerHTML = `<td>${game.name}</td><td>${game.category}</td><td>${game.release_date.split("T")[0]}</td><td>$${game.price.toFixed(2)}</td>`;
+                gamesContainer.appendChild(gameItem);
+            });
+        })
+    }
+
+    getGames()
+  </script>
+
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -76,11 +93,22 @@ https://templatemo.com/tm-589-lugx-gaming
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Modern Warfare® II</h3>
-          <span class="breadcrumb"><a href="#">Home</a>  >  <a href="#">Shop</a>  >  Assasin Creed</span>
+          <h3>Games List</h3>
+<!--          <span class="breadcrumb"><a href="#">Home</a>  >  <a href="#">Shop</a>  >  Assasin Creed</span>-->
         </div>
       </div>
     </div>
+  </div>
+
+  <div style="margin-bottom:100px; background-color:#0170f8; z-index: 100; padding:10px; color:white; border-width: 3px; border-style: solid; border-color: white">
+    <table id="games_list" cellpadding="10" cellspacing="2" style="width:100%; color:white; font-size:16px;">
+      <tr style="font-size:16px; font-weight:bold;">
+        <td>Name</td>
+        <td>Category</td>
+        <td>Release Date</td>
+        <td>Price</td>
+      </tr>
+    </table>
   </div>
 
   <div class="single-product section">
