@@ -28,6 +28,7 @@ https://templatemo.com/tm-589-lugx-gaming
 -->
     <script src="config.js"></script>
     <script src="record-page-view.js"></script>
+    <script src="record-click.js"></script>
 
   </head>
 
@@ -63,7 +64,7 @@ https://templatemo.com/tm-589-lugx-gaming
                       <li><a href="shop.html">Our Shop</a></li>
                       <li><a href="product-details.html">Product Details</a></li>
                       <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#">Sign In</a></li>
+                      <li click-id="sign-in-button"><a href="#">Sign In</a></li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -86,8 +87,8 @@ https://templatemo.com/tm-589-lugx-gaming
             <p>LUGX Gaming is free Bootstrap 5 HTML CSS website template for your gaming websites. You can download and use this layout for commercial purposes. Please tell your friends about TemplateMo.</p>
             <div class="search-input">
               <form id="search" action="#">
-                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
-                <button role="button">Search Now</button>
+                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" click-id="search-input"/>
+                <button role="button" click-id="search-now-button">Search Now</button>
               </form>
             </div>
           </div>
@@ -106,7 +107,7 @@ https://templatemo.com/tm-589-lugx-gaming
   <div class="features">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6" click-id="feature/free-storage">
           <a href="#">
             <div class="item">
               <div class="image">
@@ -116,7 +117,7 @@ https://templatemo.com/tm-589-lugx-gaming
             </div>
           </a>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6" click-id="feature/user-more">
           <a href="#">
             <div class="item">
               <div class="image">
@@ -126,7 +127,7 @@ https://templatemo.com/tm-589-lugx-gaming
             </div>
           </a>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6" click-id="feature/reply-ready">
           <a href="#">
             <div class="item">
               <div class="image">
@@ -136,7 +137,7 @@ https://templatemo.com/tm-589-lugx-gaming
             </div>
           </a>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6" click-id="feature/easy-layout">
           <a href="#">
             <div class="item">
               <div class="image">
@@ -159,7 +160,7 @@ https://templatemo.com/tm-589-lugx-gaming
             <h2>Trending Games</h2>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" click-id="view-all-games">
           <div class="main-button">
             <a href="shop.html">View All</a>
           </div>
