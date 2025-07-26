@@ -11,7 +11,7 @@ window.addEventListener('beforeunload', () => {
         },
         body: JSON.stringify({
             path: window.location.pathname,
-            timeSpent: timeSpent
+            time_spent: timeSpent
         })
     }).then(r => r.json())
 });
