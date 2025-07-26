@@ -38,3 +38,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          tags: kaneeldias/lugx-gaming-frontend:latest
