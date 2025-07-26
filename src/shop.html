@@ -26,13 +26,16 @@ TemplateMo 589 lugx gaming
 https://templatemo.com/tm-589-lugx-gaming
 
 -->
+    <script src="config.js"></script>
+    <script src="record-page-view.js"></script>
+
   </head>
 
 <body>
 
 <script>
     async function getGames() {
-        fetch(`http://localhost:3000/orders`)
+        fetch(`${CONFIG.ORDER_SERVICE_URL}/orders`)
             .then(response => response.json())
             .then(data => {
                 const orderContainer = document.querySelector('#orders');
